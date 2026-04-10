@@ -1,18 +1,14 @@
 #include <iostream>
 
-int triangle(int n) {
+void triangle(int n) {
 
-    if (n == 1) {
-        return 1;
-    }
-
+    int num{1};
     for (int i = 1; i < n; i++) {
         for (int j = 1; j <= i; j++) {
-            std::cout << j << " ";
+            std::cout << ++num << " ";
         }
         std::cout << std::endl;
     }
-    return n;
 }
 
 int main() {
@@ -20,7 +16,7 @@ int main() {
     std::cout << "Enter a number: ";
     std::cin >> n;
 
-    std::cout << "The triangle of " << n << " is: " << '\n' << triangle(n) << std::endl;
-
+    std::cout << "The triangle of " << n << " is: " << std::endl;
+    triangle(n);
     return 0;
 }
