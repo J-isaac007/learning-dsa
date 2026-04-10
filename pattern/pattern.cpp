@@ -38,6 +38,18 @@ void hollowRectangle(int n, int m) {
     }
 }
 
+void pyramid(int n) {
+    for (int i{1}; i <= n; i++) {
+        for (int j{1}; j <= n - i; j++) {
+            std::cout << " ";
+        }
+        for (int k{1}; k <= 2 * i - 1; k++) {
+            std::cout << "*";
+        }
+        std::cout << std::endl;
+    }
+}
+
 int main() {
     int n;
     int m;
@@ -54,6 +66,8 @@ int main() {
     std::cout << std::endl;
     std::cout << "The hollow rectangle of " << n << " x " << m << " is: " << std::endl;
     hollowRectangle(n, m);
-
+    std::cout << std::endl;
+    std::cout << "The pyramid of " << n << " is: " << std::endl;
+    pyramid(n);
     return 0;
 }
