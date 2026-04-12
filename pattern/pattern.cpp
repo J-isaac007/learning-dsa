@@ -50,6 +50,29 @@ void pyramid(int n) {
     }
 }
 
+void diamond(int n) {
+    for (int i = 0; i < 2 * n - 1; i++) {
+
+        int comp;
+        if (i < n)
+            comp = 2 * (n - i) - 1;
+        else
+            comp = 2 * (i - n + 1) + 1;
+
+        for (int j = 0; j < comp; j++)
+            std::cout << " ";
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            if (k == 0 || k == 2 * n - comp - 1)
+                std::cout << "* ";
+            else
+                std::cout << "  ";
+        }
+
+        std::cout << std::endl;
+    }
+}
+
 int main() {
     int n;
     int m;
@@ -69,5 +92,8 @@ int main() {
     std::cout << std::endl;
     std::cout << "The pyramid of " << n << " is: " << std::endl;
     pyramid(n);
+    std::cout << std::endl;
+    std::cout << "The diamond of " << n << " is: " << std::endl;
+    diamond(n);
     return 0;
 }
